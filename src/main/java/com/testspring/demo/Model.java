@@ -9,4 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class Model {
 
  private String hehe = "Hi Ass.. I mean my friend";
+
+ private String xd = "XD";
 }
