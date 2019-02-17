@@ -14,17 +14,26 @@ import java.util.Map;
 @Data
 public class FakeDao {
 
- private static Map<String, Product> productRepo = new HashMap<>();
+ private static Map<Integer, Product> productRepo;
  static {
-  Product honey = new Product();
-  honey.setId("1");
-  honey.setName("Honey");
-  productRepo.put(honey.getId(), honey);
+  productRepo = new HashMap<Integer, Product>() {
+   {
+   put(1, new Product(1, "Honey"));
+   put(2, new Product(2, "Fish"));
+   }
 
-  Product almond = new Product();
-  almond.setId("2");
-  almond.setName("Almond");
-  productRepo.put(almond.getId(), almond);
+
+  };
+
+//  Product honey = new Product();
+//  honey.setId("1");
+//  honey.setName("Honey");
+//  productRepo.put(honey.getId(), honey);
+//
+//  Product almond = new Product();
+//  almond.setId("2");
+//  almond.setName("Almond");
+//  productRepo.put(almond.getId(), almond);
  }
  private String hehe = "Hi Ass.. I mean my friend";
 
