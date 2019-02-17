@@ -48,4 +48,9 @@ public class FakeDao {
         return new ResponseEntity<>("Product updated", HttpStatus.OK);
     }
 
+    public ResponseEntity<Object> deleteProduct(int id){
+        productRepo.remove(id);
+        return new ResponseEntity<>("Product deleted!", HttpStatus.OK);
+    }
+
 }

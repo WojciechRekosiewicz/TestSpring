@@ -44,4 +44,9 @@ public class ProductController {
     public ResponseEntity<Object> updateProduct(@PathVariable("id") int id, @RequestBody Product product){
         return fakeDao.updateProduct(id, product);
     }
+
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    private ResponseEntity<Object> deleteProduct(@PathVariable("id") int id){
+        return fakeDao.deleteProduct(id);
+    }
 }
