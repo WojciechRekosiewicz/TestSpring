@@ -28,14 +28,16 @@ public class FakeDao {
  private String welcome = "Best welcome page in the history of mankind!!!";
 
  public ResponseEntity<Object> getProduct() {
-  return new ResponseEntity<>(productRepo.values(), HttpStatus.OK);
+    return new ResponseEntity<>(productRepo.values(), HttpStatus.OK);
  }
 
  public ResponseEntity<Object> createProduct(@RequestBody Product product) {
-  productRepo.put(product.getId(), product);
-  return new ResponseEntity<>("Product is created successfully", HttpStatus.CREATED);
+    productRepo.put(product.getId(), product);
+    return new ResponseEntity<>("Product is created successfully", HttpStatus.CREATED);
  }
 
-// public ResponseEntity<Object> getOneProduct
+ public ResponseEntity<Object> getOneProduct(int id){
+     return new ResponseEntity<>(productRepo.get(id), HttpStatus.OK);
+ }
 
 }

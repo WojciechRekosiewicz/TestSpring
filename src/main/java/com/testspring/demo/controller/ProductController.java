@@ -36,5 +36,8 @@ public class ProductController {
         return fakeDao.createProduct(product);
     }
 
-//    @RequestMapping(value = "/products/{id}")
+    @RequestMapping(value = "/products/{id}")
+    public ResponseEntity<Object> getOneProduct(@PathVariable("id") int id){
+       return fakeDao.getOneProduct(id);
+    }
 }
