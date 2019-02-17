@@ -31,7 +31,7 @@ public class FakeDao {
     return new ResponseEntity<>(productRepo.values(), HttpStatus.OK);
  }
 
- public ResponseEntity<Object> createProduct(@RequestBody Product product) {
+ public ResponseEntity<Object> createProduct(Product product) {
     productRepo.put(product.getId(), product);
     return new ResponseEntity<>("Product is created successfully", HttpStatus.CREATED);
  }
