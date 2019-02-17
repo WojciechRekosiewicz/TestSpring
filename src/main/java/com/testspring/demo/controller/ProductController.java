@@ -3,6 +3,7 @@ package com.testspring.demo.controller;
 
 import com.testspring.demo.dao.FakeDao;
 import com.testspring.demo.entity.Product;
+import com.testspring.demo.exception.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -41,7 +42,7 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Object> updateProduct(@PathVariable("id") int id, @RequestBody Product product){
+    public ResponseEntity<Object> updateProduct(@PathVariable("id") int id, @RequestBody Product product) {
         return fakeDao.updateProduct(id, product);
     }
 

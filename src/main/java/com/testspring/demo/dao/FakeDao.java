@@ -1,6 +1,7 @@
 package com.testspring.demo.dao;
 
 import com.testspring.demo.entity.Product;
+import com.testspring.demo.exception.ProductNotFoundException;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,6 +43,7 @@ public class FakeDao {
  }
 
     public ResponseEntity<Object> updateProduct(int id, Product product){
+        if(!productRepo.containsKey(id))throw new ProductNotFoundException();
         productRepo.remove(id);
         product.setId(id);
         productRepo.put(id, product);
