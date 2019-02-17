@@ -16,12 +16,12 @@ public class ProductController {
 
     @RequestMapping(value = "/")
     public String xd(){
-        return fakeDao.getXd();
+        return fakeDao.getWelcome();
     }
 
     @RequestMapping(value = "/hi")
     public String tester(){
-        return fakeDao.getHehe();
+        return fakeDao.getWarmerWelcome();
     }
 
 
@@ -35,4 +35,6 @@ public class ProductController {
     public ResponseEntity<Object> createProduct(@RequestBody Product product) {
         return fakeDao.createProduct(product);
     }
+
+//    @RequestMapping(value = "/products/{id}")
 }

@@ -21,23 +21,11 @@ public class FakeDao {
    put(1, new Product(1, "Honey"));
    put(2, new Product(2, "Fish"));
    }
-
-
   };
-
-//  Product honey = new Product();
-//  honey.setId("1");
-//  honey.setName("Honey");
-//  productRepo.put(honey.getId(), honey);
-//
-//  Product almond = new Product();
-//  almond.setId("2");
-//  almond.setName("Almond");
-//  productRepo.put(almond.getId(), almond);
  }
- private String hehe = "Hi Ass.. I mean my friend";
+ private String warmerWelcome = "Hi Ass.. I mean my friend";
 
- private String xd = "XD";
+ private String welcome = "Best welcome page in the history of mankind!!!";
 
  public ResponseEntity<Object> getProduct() {
   return new ResponseEntity<>(productRepo.values(), HttpStatus.OK);
@@ -47,5 +35,7 @@ public class FakeDao {
   productRepo.put(product.getId(), product);
   return new ResponseEntity<>("Product is created successfully", HttpStatus.CREATED);
  }
+
+// public ResponseEntity<Object> getOneProduct
 
 }
