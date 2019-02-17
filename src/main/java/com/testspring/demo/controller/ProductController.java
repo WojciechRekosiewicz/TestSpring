@@ -30,14 +30,18 @@ public class ProductController {
         return fakeDao.getProduct();
     }
 
+    @RequestMapping(value = "/products/{id}")
+    public ResponseEntity<Object> getOneProduct(@PathVariable("id") int id){
+        return fakeDao.getOneProduct(id);
+    }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public ResponseEntity<Object> createProduct(@RequestBody Product product) {
         return fakeDao.createProduct(product);
     }
 
-    @RequestMapping(value = "/products/{id}")
-    public ResponseEntity<Object> getOneProduct(@PathVariable("id") int id){
-       return fakeDao.getOneProduct(id);
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<Object> updateProduct(@PathVariable("id") int id, @RequestBody Product product){
+        return fakeDao.updateProduct(id, product);
     }
 }
