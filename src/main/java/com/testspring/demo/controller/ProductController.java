@@ -4,6 +4,7 @@ package com.testspring.demo.controller;
 import com.testspring.demo.dao.FakeDao;
 import com.testspring.demo.entity.Product;
 import com.testspring.demo.exception.ProductNotFoundException;
+import com.testspring.demo.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,9 @@ public class ProductController {
 
     @Autowired
     private FakeDao fakeDao;
+
+//    @Autowired
+//    private ProductService productService;
 
     @RequestMapping(value = "/")
     public String xd(){
