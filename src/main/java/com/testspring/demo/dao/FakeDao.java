@@ -38,14 +38,14 @@ public class FakeDao {
     }
 
     public ResponseEntity<Object> createProduct(Product product) {
-        productRepo.put(product.getId(), product);
+//        productRepo.put(product.getId(), product);
         return new ResponseEntity<>("Product is created successfully", HttpStatus.CREATED);
  }
 
     public ResponseEntity<Object> updateProduct(int id, Product product){
         if(!productRepo.containsKey(id))throw new ProductNotFoundException();
         productRepo.remove(id);
-        product.setId(id);
+//        product.setId(id);
         productRepo.put(id, product);
         return new ResponseEntity<>("Product updated", HttpStatus.OK);
     }
