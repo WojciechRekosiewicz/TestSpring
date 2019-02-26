@@ -20,8 +20,8 @@ public class FakeDao {
     static {
         productRepo = new HashMap<Integer, Product>() {
            {
-           put(1, new Product(1, "Honey"));
-           put(2, new Product(2, "Fish"));
+           put(1, new Product());
+           put(2, new Product());
            }
           };
          }
